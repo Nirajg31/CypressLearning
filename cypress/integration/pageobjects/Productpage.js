@@ -25,5 +25,9 @@ getsuggestion()
  {
     return cy.get("input[type='submit']")
  }
+ getalert()
+ {
+    return cy.get('.alert');
+ }
 }
 export default Productpage

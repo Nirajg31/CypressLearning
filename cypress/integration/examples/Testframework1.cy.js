@@ -39,7 +39,12 @@ describe('My second test suite',()=>
             // productpage.getsuggestion().click();
             productpage.getCheckbox().click({force:true});
             productpage.getsubmitbutton().click();
-
+            productpage.getalert().then (function(element)
+            {
+                const storetext= element.text();
+                expect(storetext.includes('Success!')).to.be.true
+              
+            })
 
     })
 
