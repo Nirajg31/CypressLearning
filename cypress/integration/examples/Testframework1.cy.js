@@ -18,7 +18,7 @@ describe('My second test suite',()=>
     {
         const homepage=new Homepage();
         const productpage= new Productpage();
-        cy.visit('https://rahulshettyacademy.com/angularpractice/');
+        cy.visit(Cypress.env('url')+"/angularpractice/");
         homepage.getEditBox().type(this.data.name);
         homepage.getGendar().select(this.data.gendar);
         homepage.getTwowayDataBinding().should('have.value',this.data.name);
@@ -37,7 +37,7 @@ describe('My second test suite',()=>
         var totalamount 
         productpage.getproductprice().each(($e1) =>
                 {
-                    sum += parseFloat($e1.text().split(" ")[1].trim());
+                sum += parseFloat($e1.text().split(" ")[1].trim());
                 }).then(()=>
                 {
                productpage.getTotal().invoke('text').then((totatlvalue)=>
@@ -61,6 +61,7 @@ describe('My second test suite',()=>
                 expect(storetext.includes('Success!')).to.be.true
               
             })
+            //npx cypress run --spec cypress\integration\examples\Testframework1.cy.js --headed --browser chrome --env url="https://rahulshettyacademy.com" run spec file from the browser in headed mode 
 
     })
 
