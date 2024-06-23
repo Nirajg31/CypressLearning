@@ -29,5 +29,13 @@ getsuggestion()
  {
     return cy.get('.alert');
  }
+ getproductprice()
+ {
+    return cy.get('tr td:nth-child(4) strong');
+ }
+ getTotal()
+ {
+    return cy.get('td h3 strong');
+ }
 }
 export default Productpage

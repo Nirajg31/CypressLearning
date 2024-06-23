@@ -31,7 +31,23 @@ describe('My second test suite',()=>
             cy.selectProduct(element)
         });
       
-            productpage.getCheckout().click({force:true})
+
+        productpage.getCheckout().click({force:true})
+        let sum=0;
+        var totalamount 
+        productpage.getproductprice().each(($e1) =>
+                {
+                    sum += parseFloat($e1.text().split(" ")[1].trim());
+                }).then(()=>
+                {
+               productpage.getTotal().invoke('text').then((totatlvalue)=>
+                {
+                totalamount =totatlvalue.split(" ")[1].trim();
+                expect(sum).to.equal(Number(totalamount));
+               
+            })
+
+         })
             productpage.getCheckoutbutton().click({force:true});
             productpage.getCountry().type('India');
             Cypress.config('defaultCommandTimeout',12000);
