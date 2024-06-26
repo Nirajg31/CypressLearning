@@ -2,11 +2,18 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig(
   {
+    projectId: "kcuvqk",
   defaultCommandTimeout:8000,
   reporter: 'cypress-mochawesome-reporter',//reporter
-  video: true,
-  videosFolder: 'cypress/videos',
-  env:{
+  retries: {
+    
+    runMode: 2,
+    openMode: 1
+
+    },
+  // video: true, 
+  // videosFolder: 'cypress/videos',
+   env:{
     url : "https://rahulshettyacademy.com"
   },
   e2e: {

@@ -12,7 +12,7 @@
 // -- This is a parent command --
 Cypress.Commands.add('selectProduct', (productName) => 
     { 
-    cy.get('h4.card-title').each(($el1,index,$list)=>
+    cy.get('h4.card-title').each(($el1,index)=>
         {
         if($el1.text().includes(productName))
             {

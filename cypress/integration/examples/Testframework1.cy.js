@@ -6,6 +6,7 @@ describe('My second test suite',()=>
 {
     before(()=>
     {
+        
         cy.fixture('example').then(function(data)
         {
             this.data=data;
@@ -14,7 +15,7 @@ describe('My second test suite',()=>
 
     })
 
-    it('My first test case',function()
+    it('My first test case', function()
     {
         const homepage=new Homepage();
         const productpage= new Productpage();
@@ -58,7 +59,7 @@ describe('My second test suite',()=>
             productpage.getalert().then (function(element)
             {
                 const storetext= element.text();
-                expect(storetext.includes('nikuccess!')).to.be.true
+                expect(storetext.includes('NOSuccess!')).to.be.true
               
             })
             //npx cypress run --spec cypress\integration\examples\Testframework1.cy.js --headed --browser chrome --env url="https://rahulshettyacademy.com" run spec file from the browser in headed mode 
