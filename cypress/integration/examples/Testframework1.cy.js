@@ -58,7 +58,7 @@ describe('My second test suite',()=>
             productpage.getalert().then (function(element)
             {
                 const storetext= element.text();
-                expect(storetext.includes('nikuccess!')).to.be.true
+                expect(storetext.includes('Success!')).to.be.true
               
             })
             //npx cypress run --spec cypress\integration\examples\Testframework1.cy.js --headed --browser chrome --env url="https://rahulshettyacademy.com" run spec file from the browser in headed mode 
